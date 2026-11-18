@@ -24,6 +24,11 @@ Each browser stores its own sample shift locally when browser storage is availab
 
 Icon license notices are in [third-party/lucide-LICENSE.txt](third-party/lucide-LICENSE.txt).
 
+Candidate submission artifacts (the app code above is unchanged):
+
+- `prototype-return-desk.html` — sketch of the proposed change
+- `FINDINGS.md` — working notes, playthrough evidence, and edge-case sweep
+
 ## Candidate submission — "Would you keep this product?"
 
 **Decision: keep the product, with one change at the return step.** The core model is sound: it tracks physical units, not just equipment types, and its availability and quantity guards prevented real mistakes during my shift. The one thing I would change is the Saturday-morning return, where the app asks me to close "the right item" but gives me no way to verify which physical adapter came back and no overdue signal.

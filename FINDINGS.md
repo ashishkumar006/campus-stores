@@ -434,6 +434,11 @@ directly tests the moment I changed.
 12. **Google Form** — cannot be completed without the roll number and email ID;
     these must be entered by the candidate, and only in the form. The form also
     needs the final commit link above.
+13. **Final verification pass** — re-opened the untouched app (all four tabs
+    and the Candidate brief present) and the prototype in the browser; both
+    load correctly. Added the submission artifacts to the README Source list
+    and a "Before / after" panel to the prototype so the single change is
+    obvious to a reviewer.
 
 ## Remaining
 
