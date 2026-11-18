@@ -540,6 +540,11 @@ desk explain itself"), but the submitted answer is unchanged.
     copy and styles, ran a live DOM/accessibility audit, and recorded a
     transparency/ease-of-use report with add / change / keep lists and a note
     on which UI instructions are appropriate. Recorded above.
+17. **README restructured** — restored the original intro, Run the app, Source
+    and licence notice; kept the Submit your work boilerplate out as requested;
+    appended a fuller submission document with a slip table, two Mermaid
+    diagrams (shift timeline and current vs proposed return flow), and a
+    scope-notes section.
 
 ## Remaining
 
