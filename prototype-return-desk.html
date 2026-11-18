@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campus Stores — Return desk (prototype)</title>
+<style>
+  body { margin:0; padding:24px; background:#f0f2f1; color:#202c35;
+         font:14px/1.5 Arial, sans-serif; }
+  .wrap { max-width:860px; margin:auto; }
+  .tag { display:inline-block; background:#d2dcdf; border-radius:5px;
+         padding:2px 8px; font-size:12px; }
+  .proto { background:#fff3d8; color:#65491e; padding:8px 12px;
+           border-left:4px solid #bd502f; margin-bottom:16px; }
+  .card { background:#fff; border:1px solid #d2dcdf; border-radius:10px;
+          padding:16px 18px; margin-bottom:14px; }
+  h1 { font-size:22px; margin:0 0 4px; }
+  h2 { font-size:16px; margin:0 0 10px; }
+  .clock { color:#526370; margin-bottom:16px; }
+  table { width:100%; border-collapse:collapse; }
+  td, th { text-align:left; padding:8px 6px; border-top:1px solid #d2dcdf; font-size:13px; }
+  .late { background:#fde9e3; color:#8a3415; font-weight:bold; }
+  .quiet { color:#526370; }
+  .opt { border:1px solid #d2dcdf; border-radius:6px; padding:8px 10px; margin:6px 0; }
+  .note { background:#f3f5f5; padding:10px 12px; border-radius:6px; margin:10px 0; }
+  button { font:600 13px Arial,sans-serif; padding:9px 14px; border-radius:6px;
+           border:1px solid #233e4c; background:#fff; color:#233e4c; cursor:pointer; }
+  button.primary { background:#233e4c; color:#fff; }
+  .small { font-size:12px; color:#526370; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="proto"><b>Prototype sketch</b> — a proposed change to the Saturday
+  return step. This is a separate mockup, not the shipped app.</div>
+
+  <h1>Campus Stores · Return desk</h1>
+  <div class="clock"><b>Saturday · 9:00 am</b> — morning shift handover</div>
+
+  <div class="card">
+    <h2>Outstanding from the screening</h2>
+    <table>
+      <tr><th>Slip</th><th>Unit</th><th>Due</th><th>Status</th></tr>
+      <tr>
+        <td>L-404</td>
+        <td>USB-C → HDMI adapter<br><span class="quiet">AD-12 · Belkin AVC002 · bin C4</span></td>
+        <td>Fri 8 pm</td>
+        <td class="late">OVERDUE 13h</td>
+      </tr>
+      <tr>
+        <td>L-401</td>
+        <td>Wireless microphone<br><span class="quiet">MI-09 · Shure BLX · bin B3</span></td>
+        <td>Sat 10 am</td>
+        <td>Not due yet — other club, leave open</td>
+      </tr>
+    </table>
+    <p class="small">Only the adapter belongs to the Film Society kit. The microphone
+    is shown so the operator does not close the wrong slip by mistake.</p>
+  </div>
+
+  <div class="card">
+    <h2>Confirm return — L-404</h2>
+    <p class="quiet">Issued unit: <b>AD-12 · Belkin AVC002</b> · home bin C4</p>
+
+    <p><b>Does the physical unit on the counter match?</b></p>
+    <div class="opt"><b>( ) Yes</b> — AD-12, Belkin AVC002, tag matches the slip</div>
+    <div class="opt"><b>( ) No — a different unit was returned</b>
+      <br>Which unit? <span class="tag">AD-15 · Anker A8312 · bin C4</span>
+      <br><span class="small">Selecting this keeps L-404 open and raises a
+      discrepancy for the owner to resolve — it does not silently close it.</span>
+    </div>
+
+    <p><b>Condition</b> &nbsp; ( ) Good &nbsp; ( ) Damaged &nbsp; ( ) Missing cable/part</p>
+    <p><b>Returned at</b> &nbsp; Saturday 9:02 am (stamped automatically)</p>
+
+    <div class="note">
+      <b>Handover note (drafted from the slip)</b><br>
+      Sat 9:02 — Leela Das returned the Film Society adapter against L-404, 13h
+      after the Fri 8 pm due time. Unit confirmed as AD-12 (Belkin), condition
+      good. Projector PR-04 and speaker SP-02 were closed last night. The Debate
+      Union microphone L-401 is still out until Sat 10 am.
+    </div>
+
+    <button class="primary">Confirm return</button>
+    <button>Void / undo this slip</button>
+  </div>
+
+  <div class="card">
+    <h2>What stays the same</h2>
+    <p>Availability rules are unchanged: the broken projector PR-06 stays out of
+    the issue list, units already on loan stay hidden, and the one-adapter-per-
+    request quantity guard still applies. Slips still track physical unit IDs.</p>
+  </div>
+</div>
+</body>
+</html>
