@@ -31,7 +31,7 @@ Candidate submission artifacts (the app code above is unchanged):
 
 ## Candidate submission — "Would you keep this product?"
 
-**Decision: keep the product, with one change at the return step.** The core model is sound: it tracks physical units, not just equipment types, and its availability and quantity guards prevented real mistakes during my shift. The one thing I would change is the Saturday-morning return, where the app asks me to close "the right item" but gives me no way to verify which physical adapter came back and no overdue signal.
+**Decision: keep the product, with one change at the return step.** The core model is sound: it tracks physical units, not just equipment types, and its availability and quantity guards prevented real mistakes during my shift. The one thing I would change is the Saturday-morning return, where the app asks me to close "the right item" but gives me no way to verify which physical adapter came back and no overdue signal. This is a **UI/UX change for transparency and ease of use**: make the physical unit, its due status and the handover state visible at the counter, so a return can be completed in one informed step. The underlying record model stays the same.
 
 - Prototype of the change: [`prototype-return-desk.html`](prototype-return-desk.html)
 - Full working notes, evidence, and edge-case sweep: [`FINDINGS.md`](FINDINGS.md)

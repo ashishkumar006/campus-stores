@@ -439,6 +439,9 @@ directly tests the moment I changed.
     load correctly. Added the submission artifacts to the README Source list
     and a "Before / after" panel to the prototype so the single change is
     obvious to a reviewer.
+14. **Framing clarified** — made explicit in the README decision that the
+    proposed change is a UI/UX improvement for transparency and ease of use
+    at the counter, while the underlying record model is unchanged.
 
 ## Remaining
 
