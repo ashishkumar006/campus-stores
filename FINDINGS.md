@@ -399,6 +399,96 @@ simply click "yes" without checking the label, the mismatch count stays the
 same and the change did not help. That single observation is falsifiable and
 directly tests the moment I changed.
 
+## Additional UI/UX research — transparency and ease of use (exploratory)
+
+Not part of the submitted answer; separate from the chosen single change.
+
+### What was inspected
+
+- `index.html` copy and structure (exam strip lines 69-97, mast, shift aside
+  with advance control, nav, status bar).
+- `styles.css` focus-visible rule, responsive container queries, light/dark.
+- Live DOM audit in Chromium: 9 buttons initially, no `aria-label` or `title`
+  on any of them, three identical "View form" buttons, no step indicator,
+  form labels with no help text, one `role="status" aria-live="polite"` region.
+
+### Findings
+
+1. No progress indicator: `stepIndicator: false`. The only cues are the clock
+   and the advance button's changing text ("Move to return time", "Move to next
+   morning"); the operator cannot tell they are in phase 1 of 3.
+2. Task instructions are ephemeral: the shift narrative lives in the aside and
+   is replaced at each phase. "Hand over to the morning shift" and "work out
+   what was outstanding" have no checklist or list to work from.
+3. Repeated buttons have no distinguishing accessible names: three "View
+   form" buttons and later multiple "Record return" buttons, all with
+   `aria-label: null`. Screen-reader users hear identical labels.
+4. Unavailable units are hidden rather than disabled with a reason. PR-06
+   (in repair) and MI-09 (on loan) simply vanish from the dropdown; the guard
+   is correct but its reasoning is invisible.
+5. No field-level help or errors: the issue form has four labels and no help
+   text (`helpTexts: 0`); every failure goes to one status line that the next
+   action overwrites.
+6. "Restart sample shift" is destructive (clears slips and notes) with no
+   confirmation.
+7. Register rows show only "L-404 · AD-12 · RQ-214 · Kabir Sen · Due Fri 8 pm"
+   - no model, no bin, no overdue state; "Due Fri 8 pm" is raw text.
+8. Inventory "On loan" rows say nothing about who, which request, or when due.
+9. Desk book entries are undifferentiated text; the 7:30 message contains a
+   commitment but is not flagged as action-required; notes are sorted by
+   insertion order, not their phase time.
+10. The aria-live status is good but single-channel: errors and successes
+    share it and there is no history.
+
+### Instructions on the UI — needed or not?
+
+Yes for **tool mechanics** (what a slip is, why a unit is unavailable, what
+"issue → return → handover" means), but **no** for the decisions: telling the
+operator which adapter to issue or when to close would invalidate the
+exercise. A small "How this desk works" disclosure describing mechanics only
+would improve ease of use without giving away answers.
+
+### What I would add
+
+- "Shift 1 of 3" step indicator with a progress line.
+- A persistent "What you need to do" checklist per phase, derived from data.
+- Disabled dropdown options **with reasons** ("PR-06 — in repair, Workshop";
+  "MI-09 — on loan to Tara Shah until Sat 10 am") instead of hiding them.
+- Due-state labels: "Overdue 13h", "Due today", "Not yet due".
+- Inline field help: "From RQ-214 · filed by Isha Rao · due Fri 8 pm" and
+  "Desk book: Kabir Sen authorised to collect".
+- Inline field errors with focus, replacing status-only failures.
+- Confirmation for "Restart sample shift".
+- A structured handover note template with prompts (what is still out, who
+  has it, when due).
+- Accessible button names: "View form RQ-214", "Record return L-404 · AD-12".
+- Empty-state guidance and a short recent-activity trail.
+
+### What I would change
+
+- Register rows: show model/bin and due state, not only the asset ID.
+- Inventory: show holder, request and due for on-loan units.
+- Desk book: mark action-required messages; order notes by their phase time.
+- Status bar: stop overwriting; keep a short history of the last few events.
+- Advance control: explain the jump and allow going back or confirm skipping.
+
+### What I would keep
+
+- The four-register information architecture and icon-plus-text navigation.
+- The physical-unit slip model and all availability/quantity guards - only
+  reveal their reasons, do not weaken them.
+- The neutral, uncluttered visual style, responsive layout and light/dark theme.
+- Focus-visible styles, the `aria-live` status region and semantic landmarks
+  (`main`, `nav aria-label`, `section aria-label`).
+- The Candidate brief as a separate disclosure, not part of the product UI.
+
+### Relation to the submitted answer
+
+The strongest new observation is "hidden vs disabled-with-reason": it makes the
+*good* moment more visible and is a genuine transparency improvement. Together
+with due-state labels it could form an alternative headline change ("make the
+desk explain itself"), but the submitted answer is unchanged.
+
 ## Task log — work done, in order
 
 1. **Fork + clone** — created `ashishkumar006/campus-stores` via the GitHub API
@@ -446,6 +536,10 @@ directly tests the moment I changed.
     time-aware register, a request-driven issuing checklist, and authorisation
     binding against the chosen return confirmation, with the reason for the
     choice. No prototype or walkthrough changes.
+16. **UI/UX research completed** — restarted the local server, read the app's
+    copy and styles, ran a live DOM/accessibility audit, and recorded a
+    transparency/ease-of-use report with add / change / keep lists and a note
+    on which UI instructions are appropriate. Recorded above.
 
 ## Remaining
 
