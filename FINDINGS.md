@@ -442,6 +442,10 @@ directly tests the moment I changed.
 14. **Framing clarified** — made explicit in the README decision that the
     proposed change is a UI/UX improvement for transparency and ease of use
     at the counter, while the underlying record model is unchanged.
+15. **Alternatives considered** — added a short README subsection weighing a
+    time-aware register, a request-driven issuing checklist, and authorisation
+    binding against the chosen return confirmation, with the reason for the
+    choice. No prototype or walkthrough changes.
 
 ## Remaining
 

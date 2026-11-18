@@ -61,6 +61,10 @@ Candidate submission artifacts (the app code above is unchanged):
 
 **One observation at a real counter.** Track, before and after the change, how often the physical tag on a returned item differs from the slip the operator closes, and when that mismatch is discovered. If the change helps, mismatches are caught at the counter (a discrepancy is raised) and those found later at stocktake fall to near zero; the operator can also complete the handover without re-reading the whole register. If staff simply click "yes" without checking the label, the mismatch count stays the same and the change did not help.
 
+### Alternatives considered
+
+I also considered making the register time-aware (Overdue / Due now / Not yet due, with an auto-generated handover packet), turning each approved request into an issuing checklist, and binding each request to an authorised collector. Each would fix a real problem I saw: due dates are stored but unused, the kit took three blind form fills, and Isha's request was collected by Kabir based on a message on another tab. But each is a broader redesign. I chose the return confirmation because the brief asks specifically about the Saturday "right item" moment, and that is where my evidence is strongest.
+
 ## Submit your work
 
 1. [Fork Campus Stores](https://github.com/virinchi-healthcare/campus-stores/fork) into your GitHub account. Complete the candidate brief and push your changes to your public fork. In your README, point reviewers to your work and explain the decision you made.
